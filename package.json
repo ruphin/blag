@@ -1,0 +1,35 @@
+{
+  "name": "blag",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Ruphin's Blag",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruphin/blag.git"
+  },
+  "author": "Goffert van Gool <ruphin@ruphin.net>",
+  "keywords": [
+    "web-components",
+    "webcomponents",
+    "blog",
+    "blag"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruphin/blag/issues"
+  },
+  "scripts": {
+    "build": "gulp",
+    "dev": "gulp serve"
+  },
+  "homepage": "https://github.com/ruphin/blag",
+  "dependencies": {
+    "browser-sync": "^2.23.1",
+    "gluon-router": "^0.0.3",
+    "gluonjs": "^2.0.2",
+    "gulp": "^3.9.1",
+    "gulp-rollup": "^2.15.0",
+    "gulp-sourcemaps": "^2.6.2",
+    "gulp-uglify-es": "^0.1.9"
+  }
+}
