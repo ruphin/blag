@@ -3,16 +3,52 @@ import { onRouteChange, currentPath, currentQuery, currentHash } from '../gluon-
 import './blag-page-main.js';
 import './blag-page-article.js';
 
+const fontStyle = document.createTextNode(`
+  @font-face {
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Cinzel Black'), local('Cinzel-Black'), url(https://fonts.gstatic.com/s/cinzel/v7/u8CPqNcpTcF_eDy_SWp9tVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+  }
+`);
+
+const styleNode = document.createElement('style');
+styleNode.appendChild(fontStyle);
+document.head.appendChild(styleNode);
+
 class BlagApp extends GluonElement {
   get template() {
     return html`
     <style>
+      :host {
+        display: block;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.9);
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .header-title {
+        font-family: 'Cinzel', sans-serif;
+        text-decoration: none;
+        color: black;
+        font-size: 36px;
+      }
+      #pages {
+        padding-top: 65px;
+      }
       #pages > *:not(.visible) {
         display: none;
       }
     </style>
 
-    <div class="header"><span>This is a header!</span> <a href="/">Go Home</a></div>
+    <div class="header"><a class="header-title" href="/">Blag</a></div>
     <div id="pages">
       <blag-page-main route="/"></blag-page-main>
       <blag-page-article id="articlePage" route="/article"></blag-page-article>

@@ -9,13 +9,17 @@ class BlagPageArticle extends GluonElement {
           display: block;
         }
       </style>
-      <blag-article src="${this.articleSource}"></blag-article>
+      <blag-article src="${this.articleUri || ''}"></blag-article>
     `;
   }
 
   set article(article) {
-    this.articleSource = `/articles/${article}.html`;
+    this.setAttribute('article', article);
+    this.articleUri = `/articles/${article}.html`;
     this.render();
+  }
+  get article() {
+    return this.getAttribute('article');
   }
 }
 
