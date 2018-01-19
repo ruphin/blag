@@ -28,7 +28,8 @@ class BlagApp extends GluonElement {
         position: fixed;
         top: 0;
         width: 100%;
-        background: rgba(255,255,255,0.9);
+        padding: 0 20px;
+        background: rgba(255,255,255,0.97);
         height: 65px;
         display: flex;
         justify-content: center;
@@ -39,6 +40,16 @@ class BlagApp extends GluonElement {
         text-decoration: none;
         color: black;
         font-size: 36px;
+      }
+      @media (max-width: 767px) {
+        .header {
+          height: 56px;
+          justify-content: space-between;
+        }
+
+        .header-title {
+          font-size: 30px;
+        }
       }
       #pages {
         padding-top: 65px;

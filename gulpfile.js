@@ -3,6 +3,8 @@ const path = require('path');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const rollup = require('gulp-rollup');
+const includePaths = require('rollup-plugin-includepaths');
+const rename = require('gulp-rename');
 const uglify = require('gulp-uglify-es').default;
 
 const includePathOptions = {
@@ -14,15 +16,15 @@ const includePathOptions = {
 
 gulp.task('build', () => {
   return gulp
-    .src('src/blag-app.js')
-    .pipe(sourcemaps.init())
-    .pipe(uglify({ toplevel: true, mangle: true, compress: { passes: 2 } }))
-    .pipe(sourcemaps.write('.'))
+    .src(['src/*.js', 'node_modules/**/*.js'])
+    .pipe(rollup({ input: 'src/blag-app.js', format: 'iife', name: 'BlagApp', plugins: [includePaths(includePathOptions)] }))
+    .pipe(rename('index.js'))
+    .pipe(uglify({ mangle: true, compress: { passes: 2 } }))
     .pipe(gulp.dest('.'));
 });
 
 // Build production files, the default task
-gulp.task('default', ['build', 'nomodule']);
+gulp.task('default', ['build']);
 
 // Serve from source
 gulp.task('serve', () => {
