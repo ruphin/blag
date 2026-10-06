@@ -1,5 +1,5 @@
-import { html, GluonElement } from '../gluonjs/gluon.js';
-import { onRouteChange, currentPath, currentQuery, currentHash } from '../gluon-router/gluon-router.js';
+import { html, GluonElement } from 'gluonjs';
+import { onRouteChange, currentPath, currentQuery, currentHash } from 'gluon-router';
 import './blag-page-main.js';
 import './blag-page-article.js';
 

@@ -1,6 +1,6 @@
-import { html, GluonElement } from '../gluonjs/gluon.js';
-import { unsafeHTML } from '../lit-html/lib/unsafe-html.js';
-import { until } from '../lit-html/lib/until.js';
+import { html, GluonElement } from 'gluonjs';
+import { unsafeHTML } from 'lit-html/lib/unsafe-html.js';
+import { until } from 'lit-html/lib/until.js';
 
 class BlagArticle extends GluonElement {
   constructor() {

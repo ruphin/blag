@@ -1,4 +1,4 @@
-import { html, GluonElement } from '../gluonjs/gluon.js';
+import { html, GluonElement } from 'gluonjs';
 
 class BlagPageMain extends GluonElement {
   get template() {

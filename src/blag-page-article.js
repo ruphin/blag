@@ -1,4 +1,4 @@
-import { html, GluonElement } from '../gluonjs/gluon.js';
+import { html, GluonElement } from 'gluonjs';
 import './blag-article.js';
 
 class BlagPageArticle extends GluonElement {
